@@ -1,7 +1,7 @@
 # My Experience with Training StyleGAN2+3
 Training and fine-tuning StyleGAN models is nearly undocumented. It is very slow and delicate to get working. But when it does, it makes quite unique visuals.
 
-## MY NOTES ON TRAINING
+## My Notes On Training
 - Here is a summary of my findings regarding each useful attribute when training with the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) repo.
 - Batch-GPU: Increase the `Batch-GPU` to whatever the GPU VRAM will allow for. This will decrease the training time. For example 16GB: `batch-gpu=8` and 40GB: `batch-gpu=32`
 - Batch: I always set `batch=32` due to VRAM limitations. Changing the Batch will also affect the Gamma.
@@ -23,7 +23,7 @@ Training and fine-tuning StyleGAN models is nearly undocumented. It is very slow
 - If retraining a SG2 1024x1024 dataset then use - https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-ffhq-1024x1024.pkl
 - If retraining a SG3 512x512 dataset then use - https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-t-afhqv2-512x512.pkl
 
-## NOTES ON TRAINING IN REGARDS TO GAMMA
+## Notes On Training In Regards To Gamma
 - It is important to note that SG2 and SG3 have very different needs when it comes to the Gamma value. "The optimal value is usually the same for `--cfg=stylegan3-t` and `--cfg=stylegan3-r`, but considerably lower for `--cfg=stylegan2`" - https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
 - For SG2, `gamma=10` is a good starting point for 512x512 datasets. But if the dataset is too diverse then the model will have trouble converging. If the dataset has lots of variation then first fine-tune the Generator so that it will create fake but accurate images to feed into the Discriminator, otherwise the model can collapse or never converge. So use `gamma=80` to smooth out too much variety in the dataset. Second, after that the model has been transfer learned to the dataset, it’s time to further fine-tune train it. So set `gamma=10` now the Generator can now accept the variety in the dataset and will be able to converge better. Futher on, you can perhaps set `gamma=5` or `gamma=1` to get even better variation in the output seeds of the model.
 - Useful Gamma examples from Nvidia can found here - https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md - and here - https://github.com/NVlabs/stylegan2-ada-pytorch/blob/main/train.py#L154
@@ -33,7 +33,7 @@ https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md#old-stylegan2-ada-
 - If no value is manually input for Gamma, then it will be automatically determined by the following formula: 
 `Gamma = 0.0002 * (Resolution^2) / Batch`. For the 512x512 model resolution that I typically work at, this translates to Gamma=1.6384, which is interesting since it's much lower than I've ever found remotely useful.
 
-## NVIDIA NOTES ON TRAINING IN REGARDS TO GAMMA
+## NVIDIA Notes On Training In Regards To Gamma
 The most important hyperparameter that needs to be tuned on a per-dataset basis is the R1 regularization weight, `--gamma`, that must be specified explicitly for train.py. As a rule of thumb, the value of `--gamma` scales quadratically with respect to the training set resolution: doubling the resolution (e.g., 256x256 → 512x512) means that `--gamma` should be multiplied by 4 (e.g., 2 → 8). The optimal value is usually the same for `--cfg=stylegan3-t` and `--cfg=stylegan3-r`, but considerably lower for `--cfg=stylegan2`.
 
 In practice, we recommend selecting the value of `--gamma` as follows:
@@ -68,7 +68,7 @@ By default, train.py exports network snapshots once every 200 kimg, i.e., the pr
 
 Note that the configurations listed in this document have been specifically tuned for 8 GPUs. The safest way to scale them to different GPU counts is to adjust `--gpu`, `--batch-gpu`, and `--snap` as described above, but it may be possible to reach faster convergence by adjusting some of the other hyperparameters as well. Note, however, that adjusting the total batch size `--batch` requires some experimentation; decreasing `--batch` usually necessitates increasing regularization `--gamma` and/or decreasing the learning rates (most importantly `--dlr`).
 
-## NOTES ON TRAINING IN REGARDS TO FREEZED FOR SG2
+## Training In Regards to FreezeD for SG2
 - Now that I'm training using much larger dataset (>30,000 images) I think that FreezeD is no longer helpful and is hindering training performance. I believe that when training tiny datasets (<500 images) then it was beenficial to help avoid overfitting at the lowest levels of the model.
 - Use `freezed=4` for transfer learning. This freezes the lower levels of the discriminator to improve the fine-tune training process and helps to avoid mode collapse and overfitting in small datasets (aka 5,000 or less images). Overall it improves results, less self repetition, and slightly lowers the training time per tick. The first four layers of the model are very low resolution (4x4, 8x8, 16x16) and do not carry much detail and so it doesn’t need retraining. Plus using `freezed=4` helps the visuals to feel more fluid, possibily because of the extensive training to the FFHQ model and it's therefore maturity. - https://arxiv.org/abs/2002.10964 - https://gwern.net/face#extended-stylegan2-danbooru2019-aydao
 - After training has stabilized using `freezed=4` after about 2000 to 3000 kimg, now you can switch over to `freezed=13`. But if you switch to `freezed=13` too early then it will introduce visual artifacts into the model. This will allow the training to render a little bit faster, about 30 seconds per tick. Using `freezed=13` means that only the very last layer of a 512x512 model will recieve training and all of the smaller resolution layers will be frozen during training. I have found this useful for when it seems that I have hit a threshold of the model learning any more details, so instead I just focus on the very last layer and then more detail can be absorded. I believe this is because the layers are connected in a way that smaller resolution layers affect larger resolution layers, and so freezing the smaller layers allows it to train differently. 
@@ -76,7 +76,7 @@ Note that the configurations listed in this document have been specifically tune
 - Need to test this: "In our experience, `--freezed=10` and `--freezed=13` tend to work reasonably well." - https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
 - Cannot use FreezeD on SG3 when starting up a transfer learning, due to the redesigned internal network compared to SG2. But I think FreezeD can enabled on SG3 when it's stablized and you want to just train on the higher rez layers of the model.
 
-## TRAIN ON A SPECIFIC GPU
+## Train on a Specific GPU
 `cmd /C "set CUDA_VISIBLE_DEVICES=0 && python train.py --outdir=results --cfg=stylegan2 --metrics=None --data=datasets/Graffiti-512.zip --kimg=5000 --gamma=10 --gpus=1 --batch=32 --batch-gpu=8 --resume=externalmodels/stylegan2-ffhq-512x512.pkl"`
 
 `cmd /C "set CUDA_VISIBLE_DEVICES=1 && python train.py --outdir=results --cfg=stylegan2 --metrics=None --data=datasets/Graffiti-512.zip --kimg=5000 --gamma=10 --gpus=1 --batch=32 --batch-gpu=8 --resume=externalmodels/stylegan2-ffhq-512x512.pkl"`
@@ -84,7 +84,7 @@ Note that the configurations listed in this document have been specifically tune
 `cmd /C "set CUDA_VISIBLE_DEVICES=0,1 && python train.py --outdir=results --cfg=stylegan2 --metrics=None --data=datasets/Graffiti-512.zip --kimg=5000 --gamma=10 --gpus=2 --batch=32 --batch-gpu=8 --resume=externalmodels/stylegan2-ffhq-512x512.pkl"`
 
 
-## DETAILS FROM DIEGO
+## Details From Diego
 I asked Diego Porres Bustamante  (maintainer of StyleGAN3-fun) the following:  
 The gamma attribute has been giving me trouble during training. It seems to be highly dependent on the dataset being input. Nvidia suggests: "try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x". So far in multiple tests running at 1, 2.5, 100, even still 10 is the best value to use across multiple datasets. Yet I can find little documentation or discussion about the gamma attribute, so I don't understand what it's actually doing. Do you have any tips or thoughts to help me better approach it?
 
