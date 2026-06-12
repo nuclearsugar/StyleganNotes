@@ -1,4 +1,4 @@
-## My Experience with Training StyleGAN2+3
+# My Experience with Training StyleGAN2+3
 Training and fine-tuning StyleGAN models is nearly undocumented. It is very slow and delicate to get working. But when it does, it makes quite unique visuals.
 
 ## MY NOTES ON TRAINING
