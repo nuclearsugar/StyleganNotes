@@ -15,6 +15,7 @@ For each of my VJ packs, I always write up tech notes to accompany the release. 
 
 - [PACK ⬕ Wildstyle Graf](https://www.jasonfletcher.info/vjloops/wildstyle-graf.html)
 - [PACK ⬕ Fashion Pose](https://www.jasonfletcher.info/vjloops/fashion-pose.html)
+- [PACK ⬕ Mask Hypno](https://www.jasonfletcher.info/vjloops/mask-hypno.html)
 - [PACK ⬕ Chrome Contort](https://www.jasonfletcher.info/vjloops/chrome-contort.html)
 - [PACK ⬕ Cyborg Fomo](https://www.jasonfletcher.info/vjloops/cyborg-fomo.html)
 - [PACK ⬕ Robotics Foundry](https://www.jasonfletcher.info/vjloops/robotics-foundry.html)
