@@ -1,3 +1,5 @@
+Here is a collection of scripts for [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) that I wrote so that I could get rolling quickly on different projects. 
+
 ## PREP POWERSHELL - Open the "Anaconda Powershell Prompt"
 `cd C:\Users\Zenith\Desktop\stylegan3-fun; conda activate stylegan3`
 
@@ -112,4 +114,4 @@ python blend_models.py `
 --output_path blendedmodels/Graffiti-Faces_SplitAt64_512x512.pkl
 ```
 - https://medium.com/@adamcole.studio/network-blending-user-interface-135bad23dd9c
-- https://github.com/Sxela/stylegan3_blending
+- Use this repo: https://github.com/Sxela/stylegan3_blending
