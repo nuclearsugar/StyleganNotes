@@ -11,7 +11,7 @@ Here's my collection of articles that share my experience working with the [Styl
 - [Hack Fix for Training on Multiple GPUs](https://github.com/nuclearsugar/StyleganNotes/blob/main/Hack%20Fix%20for%20Training%20on%20Multiple%20GPUs.md)
 
 ## Tech Notes from Projects
-For each of my VJ packs, I always write up tech notes to accompany the release. Many of these tech notes contain extra bits of experience regarding StyleGAN2+3. So if you enjoyed the articles above, then check out these projects.
+I always write up tech notes to accompany the release of my VJ packs. These tech notes contain extra bits of experience regarding StyleGAN2+3, particularly in using Stable Diffusion or Flux to generate image datasets for training StyleGAN2+3.
 
 - [PACK ⬕ Wildstyle Graf](https://www.jasonfletcher.info/vjloops/wildstyle-graf.html)
 - [PACK ⬕ Fashion Pose](https://www.jasonfletcher.info/vjloops/fashion-pose.html)
