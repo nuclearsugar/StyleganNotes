@@ -83,7 +83,6 @@ Note that the configurations listed in this document have been specifically tune
 
 `cmd /C "set CUDA_VISIBLE_DEVICES=0,1 && python train.py --outdir=results --cfg=stylegan2 --metrics=None --data=datasets/Graffiti-512.zip --kimg=5000 --gamma=10 --gpus=2 --batch=32 --batch-gpu=8 --resume=externalmodels/stylegan2-ffhq-512x512.pkl"`
 
-
 ## Details From Diego
 I asked Diego Porres Bustamante  (maintainer of StyleGAN3-fun) the following:  
 The gamma attribute has been giving me trouble during training. It seems to be highly dependent on the dataset being input. Nvidia suggests: "try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x". So far in multiple tests running at 1, 2.5, 100, even still 10 is the best value to use across multiple datasets. Yet I can find little documentation or discussion about the gamma attribute, so I don't understand what it's actually doing. Do you have any tips or thoughts to help me better approach it?
@@ -100,7 +99,6 @@ About FreezeD
 
 StyleGAN2-Extended
 - I'm also adding an extended version of StyleGAN2 (`--cfg=stylegan2-ext`​ when running train.py​), and I'm getting nice results, at the cost of each model being ~1 Gb instead of ~320 Mb. This is a work in progress, so test it if you want, but I haven't really converged to a final version of this. - https://gwern.net/face#extended-stylegan2-danbooru2019-aydao
-
 
 ## Interesting Reading
 - Documenting the process of coding StyleGAN2 from scratch. Has some interesting insights.
