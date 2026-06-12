@@ -102,6 +102,6 @@ StyleGAN2-Extended
 - I'm also adding an extended version of StyleGAN2 (`--cfg=stylegan2-ext`​ when running train.py​), and I'm getting nice results, at the cost of each model being ~1 Gb instead of ~320 Mb. This is a work in progress, so test it if you want, but I haven't really converged to a final version of this. - https://gwern.net/face#extended-stylegan2-danbooru2019-aydao
 
 
-## INTERESTING READING
+## Interesting Reading
 - Documenting the process of coding StyleGAN2 from scratch. Has some interesting insights.
 - The Path to StyleGan2: Implementing the StyleGAN - https://ym2132.github.io/StyleGAN
