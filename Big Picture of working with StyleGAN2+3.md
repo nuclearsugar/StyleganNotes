@@ -1,4 +1,4 @@
-## Big Picture of working with StyleGAN2+3.md
+## Big Picture of Working with StyleGAN2+3
 
 I've found the Youtube workshops and Google Colab Notebooks from [Derrick Schultz](https://www.patreon.com/cw/bustbright) to be very helpful in laying the foundational knowledge of working with StyleGAN2 in the Google Colab cloud. These workshops are seriously a goldmine for this kind of experimenting with StyleGAN2, I can't emphasize that enough. This one particular workshop helped me out immensely: https://www.youtube.com/watch?v=LArTgflsL98
 
