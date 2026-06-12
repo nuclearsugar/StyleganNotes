@@ -32,7 +32,7 @@ python train.py --outdir=results --cfg=stylegan2-ext --metrics=None `
 ```
 - Due to the delicate changes introduced, StyleGAN3-Extended is very sensitive to the transfer learning process. You must start with a large gamma (80) and then later reduce to gamma (10), otherwise the model will be shocked and likely collapse.
 
-## 256x256 MODEL TRAINING
+## STYLEGAN2: 256x256 MODEL TRAINING
 ```
 python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 --data=datasets/Chrome-256.zip --cbase=16384 `
