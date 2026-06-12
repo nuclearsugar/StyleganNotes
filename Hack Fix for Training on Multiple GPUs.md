@@ -1,4 +1,4 @@
-## Hack Fix for Training on Multiple GPUs
+# Hack Fix for Training on Multiple GPUs
 
 Here is more info regarding this bug: https://github.com/PDillis/stylegan3-fun/issues/33
 
