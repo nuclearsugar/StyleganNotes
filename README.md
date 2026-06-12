@@ -1,7 +1,6 @@
 # StyleGAN2+3 Notes
 Here's my collection of experience working with [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun). These were originally just notes to myself so that I could remember what I learned from my various experiments and projects. It's a bit scattered but contains some useful tidbits.
 
-## List of Articles
 - [Big Picture of Working with StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Big%20Picture%20of%20working%20with%20StyleGAN2%2B3.md)
 - [My Experience with Training StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Training%20StyleGAN%202%2B3.md)
 - [Shortcuts for StyleGAN](https://github.com/nuclearsugar/StyleganNotes/blob/main/Shortcuts%20for%20StyleGAN.md)
@@ -11,8 +10,9 @@ Here's my collection of experience working with [StyleGAN3-fun](https://github.c
 - [Installation Instructions (CUDA 11.3)](https://github.com/nuclearsugar/StyleganNotes/blob/main/Installation%20Notes%20for%20CUDA%2011.3.md)
 - [Hack Fix for Training on Multiple GPUs](https://github.com/nuclearsugar/StyleganNotes/blob/main/Hack%20Fix%20for%20Training%20on%20Multiple%20GPUs.md)
 
-## List of VJ Packs
-- For each of my VJ packs, I always write up tech notes to accompany the release. Many of these tech notes contain extra bits of experience related to StyleGAN2+3. So if you enjoyed the articles above, then check out these projects.
+## Actual Use-Cases
+For each of my VJ packs, I always write up tech notes to accompany the release. Many of these tech notes contain extra bits of experience related to StyleGAN2+3. So if you enjoyed the articles above, then check out these projects.
+
 - [PACK ⬕ Wildstyle Graf](https://www.jasonfletcher.info/vjloops/wildstyle-graf.html)
 - [PACK ⬕ Fashion Pose](https://www.jasonfletcher.info/vjloops/fashion-pose.html)
 - [PACK ⬕ Chrome Contort](https://www.jasonfletcher.info/vjloops/chrome-contort.html)
