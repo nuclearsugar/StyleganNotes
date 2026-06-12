@@ -2,7 +2,6 @@
 Training and fine-tuning StyleGAN models is nearly undocumented. It is very slow and delicate to get working. But when it does, it makes quite unique visuals.
 
 ## MY NOTES ON TRAINING
-- CTRL+C: cancels current task that is executing within the command prompt.
 - Here is a summary of my findings regarding each useful attribute when training with the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) repo.
 - Batch-GPU: Increase the `Batch-GPU` to whatever the GPU VRAM will allow for. This will decrease the training time. For example 16GB: `batch-gpu=8` and 40GB: `batch-gpu=32`
 - Batch: I always set `batch=32` due to VRAM limitations. Changing the Batch will also affect the Gamma.
