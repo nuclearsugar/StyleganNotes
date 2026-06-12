@@ -12,5 +12,25 @@ Here's my collection of experience working with [StyleGAN3-fun](https://github.c
 - [Hack Fix for Training on Multiple GPUs](https://github.com/nuclearsugar/StyleganNotes/blob/main/Hack%20Fix%20for%20Training%20on%20Multiple%20GPUs.md)
 
 ## List of VJ Packs
-For each of my VJ packs, I always write up tech notes to accompany the release. Many of these tech notes contain extra bits of experience. So if you enjoyed the articles above, then read these too.
-- 
+- For each of my VJ packs, I always write up tech notes to accompany the release. Many of these tech notes contain extra bits of experience. So if you enjoyed the articles above, then read these too.
+- [PACK ⬕ Wildstyle Graf](https://www.jasonfletcher.info/vjloops/wildstyle-graf.html)
+- [PACK ⬕ Fashion Pose](https://www.jasonfletcher.info/vjloops/fashion-pose.html)
+- [PACK ⬕ Chrome Contort](https://www.jasonfletcher.info/vjloops/chrome-contort.html)
+- [PACK ⬕ Cyborg Fomo](https://www.jasonfletcher.info/vjloops/cyborg-fomo.html)
+- [PACK ⬕ Robotics Foundry](https://www.jasonfletcher.info/vjloops/robotics-foundry.html)
+- [PACK ⬕ Graffiti Reset](https://www.jasonfletcher.info/vjloops/graffiti-reset.html)
+- [PACK ⬕ Body Body Body](https://www.jasonfletcher.info/vjloops/body-body-body.html)
+- [PACK ⬕ Alien Guest](https://www.jasonfletcher.info/vjloops/alien-guest.html)
+- [PACK ⬕ Nature Artificial](https://www.jasonfletcher.info/vjloops/nature-artificial.html)
+- [PACK ⬕ Internal Rep](https://www.jasonfletcher.info/vjloops/internal-rep.html)
+- [PACK ⬕ Nanotech Mutations](https://www.jasonfletcher.info/vjloops/nanotech-mutations.html)
+- [PACK ⬕ Cloud Computing](https://www.jasonfletcher.info/vjloops/cloud-computing.html)
+- [PACK ⬕ Mask Oblivion](https://www.jasonfletcher.info/vjloops/mask-oblivion.html)
+- [PACK ⬕ Orangutan VR](https://www.jasonfletcher.info/vjloops/orangutan-vr.html)
+- [PACK ⬕ Machine Stakeout](https://www.jasonfletcher.info/vjloops/machine-stakeout.html)
+- [PACK ⬕ Emoji Wreck](https://www.jasonfletcher.info/vjloops/emoji-wreck.html)
+- [PACK ⬕ Machine Landscapes](https://www.jasonfletcher.info/vjloops/machine-landscapes.html)
+- [PACK ⬕ Machine Graffiti](https://www.jasonfletcher.info/vjloops/machine-graffiti.html)
+- [PACK ⬕ Machine Hallucinations](https://www.jasonfletcher.info/vjloops/machine-hallucinations.html)
+- [PACK ⬕ Machine Faces](https://www.jasonfletcher.info/vjloops/machine-faces.html)
+- [PACK ⬕ Machine Eyes](https://www.jasonfletcher.info/vjloops/machine-eyes.html)
