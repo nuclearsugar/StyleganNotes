@@ -56,7 +56,7 @@ python gen_images.py --outdir=Chrome512_truc0P7_1060kimg --trunc=0.7 `
 --network=externalmodels/stylegan2-ffhq-512x512.pkl
 ```
 
-## GENERATE LATENT SEED WALK VIDEO
+## Generate Latent Seed Walk Video
 ```
 python gen_video.py `
 --output=videos/Mushroom512_SG2_truc0p7_256kimg.mp4 `
