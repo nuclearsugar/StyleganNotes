@@ -85,8 +85,8 @@ Note that the configurations listed in this document have been specifically tune
 
 
 ## DETAILS FROM DIEGO
-- I asked Diego Porres Bustamante  (maintainer of StyleGAN3-fun) the following:
-- The gamma attribute has been giving me trouble during training. It seems to be highly dependent on the dataset being input. Nvidia suggests: "try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x". So far in multiple tests running at 1, 2.5, 100, even still 10 is the best value to use across multiple datasets. Yet I can find little documentation or discussion about the gamma attribute, so I don't understand what it's actually doing. Do you have any tips or thoughts to help me better approach it?
+I asked Diego Porres Bustamante  (maintainer of StyleGAN3-fun) the following:  
+The gamma attribute has been giving me trouble during training. It seems to be highly dependent on the dataset being input. Nvidia suggests: "try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x". So far in multiple tests running at 1, 2.5, 100, even still 10 is the best value to use across multiple datasets. Yet I can find little documentation or discussion about the gamma attribute, so I don't understand what it's actually doing. Do you have any tips or thoughts to help me better approach it?
 
 And heard back this:
 - Regarding the gamma value, how I approach/view it is as a data distribution manipulator of sorts. That is, imagine your data landscape as having lots and lots of peaks representing the modes, and gamma will make these easier to distinguish or join them all into one. For example, if we take a face dataset, then there will be lots of groups: faces with moustache, red hair, eyeglasses, smiles, etc. If we set a high value of gamma, then all these details disappear and the only distribution that "matters" is that of a face (2 eyes, nose, mouth, hair), so the Generator will effectively lose expressiveness. Setting a low value of gamma does the opposite, and the Generator will be highly expressive.
