@@ -1,13 +1,14 @@
 # Shortcuts for StyleGAN
 Here is a collection of scripts for [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) that I wrote so that I could get rolling quickly on different projects. 
 
-## PREP POWERSHELL - Open the "Anaconda Powershell Prompt"
+## Prep PowerShell
+Open the "Anaconda Powershell Prompt" and then run:  
 `cd C:\Users\Zenith\Desktop\stylegan3-fun; conda activate stylegan3`
 
-## CONVERT DATASET
+## Convert Dataset
 `python dataset_tool.py --source=Lightning_512x512 --dest=datasets/Lightning-512.zip --resolution=512x512`
 
-## TRAIN STYLEGAN2
+## Train StyleGAN2
 ```
 python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 --data=datasets/Lightning-512.zip `
@@ -17,7 +18,7 @@ python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 ```
 - `CTRL+C` will cancel the task that is currently executing in the command prompt window.
 
-## TRAIN STYLEGAN3
+## Train StyleGAN3
 ```
 python train.py --outdir=results --cfg=stylegan3-t --metrics=None `
 --data=datasets/Lips-512.zip `
@@ -26,7 +27,7 @@ python train.py --outdir=results --cfg=stylegan3-t --metrics=None `
 --resume=externalmodels/stylegan3-t-afhqv2-512x512.pkl
 ```
 
-## TRAIN STYLEGAN2-EXT
+## Train StyleGAN2-EXT
 ```
 python train.py --outdir=results --cfg=stylegan2-ext --metrics=None `
 --data=datasets/Escher-512.zip `
@@ -36,7 +37,7 @@ python train.py --outdir=results --cfg=stylegan2-ext --metrics=None `
 ```
 - Due to the delicate changes introduced, StyleGAN3-Extended is very sensitive to the transfer learning process. You must start with a large gamma (80) and then later reduce to gamma (10), otherwise the model will be shocked and likely collapse.
 
-## STYLEGAN2: 256x256 MODEL TRAINING
+## StyleGAN2: 256x256 Model Training
 ```
 python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 --data=datasets/Chrome-256.zip --cbase=16384 `
@@ -48,7 +49,7 @@ python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 - Doing test runs on a new dataset using a 256x256 model is an excellent way to run tests of what is the best value for Gamma and save valuable render time. After you've determined the best Gamma value for the 256x256 model, then just multiply the Gamma value by 4 and then use it for the 512x512 model. For instance: Gamma=0.8192 for 256x256 would become Gamma=3.2768 for 512x512.
 - "As a rule of thumb, the value of --gamma scales quadratically with respect to the training set resolution: doubling the resolution (e.g., 256x256 → 512x512) means that --gamma should be multiplied by 4 (e.g., 2 → 8)."
 
-## GENERATE SEED IMAGES
+## Generate Seed Images
 ```
 python gen_images.py --outdir=Chrome512_truc0P7_1060kimg --trunc=0.7 `
 --seeds=1-5000 `
@@ -69,11 +70,11 @@ python gen_video.py `
 - 720 w-frames is useful for slow motion /// 30 seeds = 6 minutes
 - Need to auto randomize the order of the seeds? <--shuffle-seed=1>
 
-## GENERATE AND VISUALIZE INTERNAL REPRESENTATION OF MODEL = SG3 MODELS ONLY
+## Generate and Visualize "Internal Representation" of Model (SG3 models only)
 ### First you must list the available internal layers that can be visualized, then plug in the results into the next step.
 `python generate.py random-video --network=ffhq1024 --cfg=stylegan3-t --available-layers --seeds=0`
 
-### Render Test Image - Internal Representation
+### Render Test Image of "Internal Representation"
 - Ignore the errors, the image will render anyways...
 ```
 python generate.py images --network=ffhq1024 `
@@ -81,7 +82,7 @@ python generate.py images --network=ffhq1024 `
 --description= --outdir=videos
 ```
 
-### Render Video - Internal Representation
+### Render Video of "Internal Representation"
 - Since the visuals move slowly, use 30fps and a long duration-sec... Then speed up in post to 60fps
 - The duration-sec must be >10.0 or it will result in frozen video
 - Use the "description" to add notes, such as the starting-channel and seed number
@@ -93,7 +94,7 @@ python generate.py random-video --network=ffhq1024 --cfg=stylegan3-t `
 --outdir=videos; `
 ```
 
-## GENERATE FLESH DIGRESSIONS VIDEO
+## Generate "Flesh Digressions" Video
 ```
 python generate.py circular-video --outdir=videos `
 --flesh --seed=100 --trunc=0.7 `
@@ -105,7 +106,7 @@ python generate.py circular-video --outdir=videos `
 - Since the visuals move slowly, use 15fps and a long duration-sec (such as 480)... Then speed up in post to 60fps to make 2 minutes of footage.
 - <--anchor-latent-space> will change the look, but not really useful.
 
-## BLEND TOGETHER TWO DIFFERENT STYLEGAN2 MODELS
+## Blend Together Two Different StyleGAN2 Models
 `cd C:\Users\Zenith\Desktop\BlendModels; conda activate stylegan3`
 ```
 python blend_models.py `
