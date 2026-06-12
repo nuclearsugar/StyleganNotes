@@ -1,6 +1,6 @@
 ## Internal Representation Renders
 
-Rendering out videos using the "Internal Representation" mode is really interesting because you get to see the inner layers of the model, which for me partially reveals what's going on within the model, particularly if you render all videos using the same seed and them composite together tastfully in After Effects. 
+Rendering out videos using the "Internal Representation" mode is really interesting because you get to see the inner layers of the model, which for me partially reveals what's going on within the model, particularly if you render all videos using the same seed and them composite together tastfully in After Effects. For example, I used this technique in the [Internal Rep](https://www.jasonfletcher.info/vjloops/internal-rep.html) and [Fashion Pose](https://www.jasonfletcher.info/vjloops/fashion-pose.html) VJ packs.
 
 But setting up the interpolation render code was a bit annoying... So I saved it for posterity. I doubt it's useful to anyone but here it is:
 
