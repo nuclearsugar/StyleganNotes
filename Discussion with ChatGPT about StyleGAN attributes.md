@@ -159,6 +159,7 @@ Risk: Since this is only a modest increase, there’s a lower risk of over-smoot
 
 Raising Gamma to 20:  
 Stronger Regularization: A bigger jump to Gamma = 20 will significantly increase regularization, reducing overfitting more aggressively. This will force the generator to focus on overall shapes and general features of the graffiti.  
+
 Benefit: You may see a quicker reduction in overfitting, with clearer, more generalizable images.  
 Risk: A Gamma of 20 could over-regularize the model, potentially leading to over-smoothing—your graffiti might lose intricate details or become too simple, especially given the uniform black background.
 
@@ -263,13 +264,10 @@ GPU Memory Efficiency: Using batch sizes that are multiples of 8 helps ensure th
 Performance Optimization: Training with batch sizes that align with the hardware’s architecture can improve performance and speed up training times, as it minimizes fragmentation of memory usage.
 
 Setting Arbitrarily:  
-While you can technically set the batch size to any value that fits within your VRAM limits, doing so may not yield optimal performance. If you set a value that isn’t a multiple of 8, you might encounter:
-Reduced Training Efficiency: The training process could be slower or less efficient, as the model might not leverage the full capabilities of the GPU.
-Increased Memory Fragmentation: This could lead to wasted VRAM and could cause issues if the batch size does not align well with the GPU’s processing capabilities.
+While you can technically set the batch size to any value that fits within your VRAM limits, doing so may not yield optimal performance. If you set a value that isn’t a multiple of 8, you might encounter: Reduced Training Efficiency: The training process could be slower or less efficient, as the model might not leverage the full capabilities of the GPU. Increased Memory Fragmentation: This could lead to wasted VRAM and could cause issues if the batch size does not align well with the GPU’s processing capabilities.
 
 Recommendation:  
-If your GPU’s VRAM allows, it’s best to stick with batch sizes that are multiples of 8 (e.g., 8, 16, 32, etc.). This approach ensures that you’re making the most of your hardware while still fitting your memory constraints. If you find that an optimal size is, say, 20, you might want to try 16 or 24 instead, as those would better align with the typical training optimizations in place.
-This way, you ensure both effective VRAM usage and improved training performance.
+If your GPU’s VRAM allows, it’s best to stick with batch sizes that are multiples of 8 (e.g., 8, 16, 32, etc.). This approach ensures that you’re making the most of your hardware while still fitting your memory constraints. If you find that an optimal size is, say, 20, you might want to try 16 or 24 instead, as those would better align with the typical training optimizations in place. This way, you ensure both effective VRAM usage and improved training performance.
 
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
