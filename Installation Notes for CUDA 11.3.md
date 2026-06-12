@@ -1,4 +1,5 @@
 ## STYLEGAN3-FUN INSTALLATION INSTRUCTIONS (CUDA 11.3)
+_BEWARE: These notes are from 2022 and I'm not sure how useful or applicable they are anymore_
 
 1. Install VisualStudioSetup2019.exe  
 --- Install package: Desktop Development with C++  
