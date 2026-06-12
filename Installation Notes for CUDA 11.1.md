@@ -1,4 +1,5 @@
 ## STYLEGAN3-FUN INSTALLATION INSTRUCTIONS (CUDA 11.1)
+_BEWARE: These notes are from 2022 and I'm not sure how useful or applicable they are anymore_
 
 1. Install VisualStudioSetup2019.exe  
 --- Install package: Desktop Development with C++  
@@ -25,16 +26,16 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build
 stylegan3-fun.zip
 
 10. Navigate to folder within the Powershell prompt:  
-<cd C:\Users\Zenith\Desktop\stylegan3-fun>
+`cd C:\Users\Zenith\Desktop\stylegan3-fun`
 
 11. Run command:  
-<conda env create -f environment.yml>
+`conda env create -f environment.yml`
 
 12. When done, run command:  
-<conda activate stylegan3>
+`conda activate stylegan3`
 
 13. When done, run:  
-<pip install torch===1.9.1+cu111 torchvision===0.10.1+cu111 torchaudio===0.9.1 -f https://download.pytorch.org/whl/torch_stable.html>
+`pip install torch===1.9.1+cu111 torchvision===0.10.1+cu111 torchaudio===0.9.1 -f https://download.pytorch.org/whl/torch_stable.html`
 
 14. If this folder exists, then delete it:  
 C:\Users\Zenith\AppData\Local\torch_extensions
@@ -44,11 +45,13 @@ C:\Users\Zenith\AppData\Local\torch_extensions
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
 When trying to render out video using the <gen_video.py> script, I saw this error:
-"OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized."
+`"OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized."`
 
 To solve this and allow the code to continue running, add the following to the Windows environment variables:
+```
 Variable Name: KMP_DUPLICATE_LIB_OK
 Variable Value: TRUE
+```
 
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
