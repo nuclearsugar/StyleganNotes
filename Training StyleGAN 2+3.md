@@ -38,39 +38,39 @@ https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md#old-stylegan2-ada-
 `Gamma = 0.0002 * (Resolution^2) / Batch`. For the 512x512 model resolution that I typically work at, this translates to Gamma=1.6384, which is interesting since it's much lower than I've ever found remotely useful.
 
 ## NVIDIA Notes On Training In Regards To Gamma
-The most important hyperparameter that needs to be tuned on a per-dataset basis is the R1 regularization weight, `--gamma`, that must be specified explicitly for train.py. As a rule of thumb, the value of `--gamma` scales quadratically with respect to the training set resolution: doubling the resolution (e.g., 256x256 → 512x512) means that `--gamma` should be multiplied by 4 (e.g., 2 → 8). The optimal value is usually the same for `--cfg=stylegan3-t` and `--cfg=stylegan3-r`, but considerably lower for `--cfg=stylegan2`.
-
-In practice, we recommend selecting the value of `--gamma` as follows:
-- Find the closest match for your specific case in this document (config, resolution, and GPU count).
-- Try training with the same `--gamma` first.
-- Then, try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x.
-- Pick the value that yields the lowest FID.
-
-https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
-
-Suggested values for training a 512x512 dataset: (looks familiar? it's a multiple of 16)  
-`--gpus=1 --batch=8`  
-1.6384 =  /4  
-3.2768 = /2  
-6.5536 = suggested default  
-13.1072 = x2  
-26.2144 = x4
-
-Suggested values for training a 1024x1024 dataset: (looks familiar? it's a multiple of 16)  
-`--gpus=1 --batch=4`  
-13.1072 =  /4  
-26.2144 = /2  
-52.4288 = suggested default  
-104.8576 = x2  
-209.7152 = x4
-
-The results may also be improved by adjusting `--mirror` and `--aug`, depending on the training data. Specifying `--mirror=1` augments the dataset with random x-flips, which effectively doubles the number of images. This is generally beneficial with datasets that are horizontally symmetric (e.g., FFHQ), but it can be harmful if the images contain noticeable asymmetric features (e.g., text or letters). Specifying `--aug=noaug` disables adaptive discriminator augmentation (ADA), which may improve the results slightly if the training set is large enough (at least 100k images when accounting for x-flips). With small datasets (less than 30k images), it is generally a good idea to leave the augmentations enabled.
-
-You can select the number of GPUs by changing the value of `--gpu`; this does not affect the convergence curves or training dynamics in any way. By default, the total batch size `--batch` is divided evenly among the GPUs, which means that decreasing the number of GPUs yields higher per-GPU memory usage. To avoid running out of memory, you can decrease the per-GPU batch size by specifying `--batch-gpu`, which performs the same computation in multiple passes using gradient accumulation.
-
-By default, train.py exports network snapshots once every 200 kimg, i.e., the product of `--snap=50` and `--tick=4`. When using few GPUs (e.g., 1–2), this means that it may take a very long time for the first snapshot to appear. We recommend increasing the snapshot frequency in such cases by specifying `--snap=20`, `--snap=10`, or `--snap=5`.
-
-Note that the configurations listed in this document have been specifically tuned for 8 GPUs. The safest way to scale them to different GPU counts is to adjust `--gpu`, `--batch-gpu`, and `--snap` as described above, but it may be possible to reach faster convergence by adjusting some of the other hyperparameters as well. Note, however, that adjusting the total batch size `--batch` requires some experimentation; decreasing `--batch` usually necessitates increasing regularization `--gamma` and/or decreasing the learning rates (most importantly `--dlr`).
+> The most important hyperparameter that needs to be tuned on a per-dataset basis is the R1 regularization weight, `--gamma`, that must be specified explicitly for train.py. As a rule of thumb, the value of `--gamma` scales quadratically with respect to the training set resolution: doubling the resolution (e.g., 256x256 → 512x512) means that `--gamma` should be multiplied by 4 (e.g., 2 → 8). The optimal value is usually the same for `--cfg=stylegan3-t` and `--cfg=stylegan3-r`, but considerably lower for `--cfg=stylegan2`.
+> 
+> In practice, we recommend selecting the value of `--gamma` as follows:
+> - Find the closest match for your specific case in this document (config, resolution, and GPU count).
+> - Try training with the same `--gamma` first.
+> - Then, try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x.
+> - Pick the value that yields the lowest FID.
+> 
+> https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
+> 
+> Suggested values for training a 512x512 dataset: (looks familiar? it's a multiple of 16)  
+> `--gpus=1 --batch=8`  
+> 1.6384 =  /4  
+> 3.2768 = /2  
+> 6.5536 = suggested default  
+> 13.1072 = x2  
+> 26.2144 = x4
+> 
+> Suggested values for training a 1024x1024 dataset: (looks familiar? it's a multiple of 16)  
+> `--gpus=1 --batch=4`  
+> 13.1072 =  /4  
+> 26.2144 = /2  
+> 52.4288 = suggested default  
+> 104.8576 = x2  
+> 209.7152 = x4
+> 
+> The results may also be improved by adjusting `--mirror` and `--aug`, depending on the training data. Specifying `--mirror=1` augments the dataset with random x-flips, which effectively doubles the number of images. This is generally beneficial with datasets that are horizontally symmetric (e.g., FFHQ), but it can be harmful if the images contain noticeable asymmetric features (e.g., text or letters). Specifying `--aug=noaug` disables adaptive discriminator augmentation (ADA), which may improve the results slightly if the training set is large enough (at least 100k images when accounting for x-flips). With small datasets (less than 30k images), it is generally a good idea to leave the augmentations enabled.
+> 
+> You can select the number of GPUs by changing the value of `--gpu`; this does not affect the convergence curves or training dynamics in any way. By default, the total batch size `--batch` is divided evenly among the GPUs, which means that decreasing the number of GPUs yields higher per-GPU memory usage. To avoid running out of memory, you can decrease the per-GPU batch size by specifying `--batch-gpu`, which performs the same computation in multiple passes using gradient accumulation.
+> 
+> By default, train.py exports network snapshots once every 200 kimg, i.e., the product of `--snap=50` and `--tick=4`. When using few GPUs (e.g., 1–2), this means that it may take a very long time for the first snapshot to appear. We recommend increasing the snapshot frequency in such cases by specifying `--snap=20`, `--snap=10`, or `--snap=5`.
+> 
+> Note that the configurations listed in this document have been specifically tuned for 8 GPUs. The safest way to scale them to different GPU counts is to adjust `--gpu`, `--batch-gpu`, and `--snap` as described above, but it may be possible to reach faster convergence by adjusting some of the other hyperparameters as well. Note, however, that adjusting the total batch size `--batch` requires some experimentation; decreasing `--batch` usually necessitates increasing regularization `--gamma` and/or decreasing the learning rates (most importantly `--dlr`).
 
 ## Training In Regards to FreezeD for SG2
 - Now that I'm training using much larger dataset (>30,000 images) I think that FreezeD is no longer helpful and is hindering training performance. I believe that when training tiny datasets (<500 images) then it was beenficial to help avoid overfitting at the lowest levels of the model.
