@@ -38,6 +38,8 @@ https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md#old-stylegan2-ada-
 `Gamma = 0.0002 * (Resolution^2) / Batch`. For the 512x512 model resolution that I typically work at, this translates to Gamma=1.6384, which is interesting since it's much lower than I've ever found remotely useful.
 
 ## NVIDIA Notes On Training In Regards To Gamma
+Source - https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
+
 > The most important hyperparameter that needs to be tuned on a per-dataset basis is the R1 regularization weight, `--gamma`, that must be specified explicitly for train.py. As a rule of thumb, the value of `--gamma` scales quadratically with respect to the training set resolution: doubling the resolution (e.g., 256x256 → 512x512) means that `--gamma` should be multiplied by 4 (e.g., 2 → 8). The optimal value is usually the same for `--cfg=stylegan3-t` and `--cfg=stylegan3-r`, but considerably lower for `--cfg=stylegan2`.
 > 
 > In practice, we recommend selecting the value of `--gamma` as follows:
@@ -46,7 +48,6 @@ https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md#old-stylegan2-ada-
 > - Then, try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x.
 > - Pick the value that yields the lowest FID.
 > 
-> https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
 > 
 > Suggested values for training a 512x512 dataset: (looks familiar? it's a multiple of 16)  
 > `--gpus=1 --batch=8`  
