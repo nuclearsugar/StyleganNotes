@@ -63,7 +63,7 @@ python gen_video.py `
 - 180 w-frames is useful for smooth motion /// 40 seeds = 2 minutes
 - 360 w-frames is useful for medium motion /// 30 seeds = 3 minutes
 - 720 w-frames is useful for slow motion /// 30 seeds = 6 minutes
-- Need to auto randomize the order of the seeds? <--shuffle-seed=1>
+- Need to auto randomize the order of the seeds? `--shuffle-seed=1`
 
 ## Generate and Visualize "Internal Representation" of Model (SG3 models only)
 ### First you must list the available internal layers that can be visualized, then plug in the results into the next step.
