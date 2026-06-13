@@ -65,7 +65,7 @@ python gen_video.py `
 - 720 w-frames is useful for slow motion /// 30 seeds = 6 minutes
 - Need to auto randomize the order of the seeds? `--shuffle-seed=1`
 
-## "Internal Representation" of Model (SG3 models only)
+## Generate "Internal Representation" Image or Video (SG3 models only)
 **1) First you must list the available internal layers that can be visualized, then plug in the results into the next step.**  
 ```
 python generate.py random-video --network=ffhq1024 --cfg=stylegan3-t --available-layers --seeds=0`
