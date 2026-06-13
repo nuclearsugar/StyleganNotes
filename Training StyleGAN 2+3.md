@@ -81,29 +81,23 @@ Source - https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
 - Need to test this: "In our experience, `--freezed=10` and `--freezed=13` tend to work reasonably well." - https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md
 - Cannot use FreezeD on SG3 when starting up a transfer learning, due to the redesigned internal network compared to SG2. But I think FreezeD can enabled on SG3 when it's stablized and you want to just train on the higher rez layers of the model.
 
-## Train on a Specific GPU
-`cmd /C "set CUDA_VISIBLE_DEVICES=0 && python train.py --outdir=results --cfg=stylegan2 --metrics=None --data=datasets/Graffiti-512.zip --kimg=5000 --gamma=10 --gpus=1 --batch=32 --batch-gpu=8 --resume=externalmodels/stylegan2-ffhq-512x512.pkl"`
-
-`cmd /C "set CUDA_VISIBLE_DEVICES=1 && python train.py --outdir=results --cfg=stylegan2 --metrics=None --data=datasets/Graffiti-512.zip --kimg=5000 --gamma=10 --gpus=1 --batch=32 --batch-gpu=8 --resume=externalmodels/stylegan2-ffhq-512x512.pkl"`
-
-`cmd /C "set CUDA_VISIBLE_DEVICES=0,1 && python train.py --outdir=results --cfg=stylegan2 --metrics=None --data=datasets/Graffiti-512.zip --kimg=5000 --gamma=10 --gpus=2 --batch=32 --batch-gpu=8 --resume=externalmodels/stylegan2-ffhq-512x512.pkl"`
-
 ## Details From Diego
-I asked Diego Porres Bustamante  (maintainer of StyleGAN3-fun) the following:  
+I asked Diego Porres Bustamante (maintainer of StyleGAN3-fun) the following:
+
 The gamma attribute has been giving me trouble during training. It seems to be highly dependent on the dataset being input. Nvidia suggests: "try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x". So far in multiple tests running at 1, 2.5, 100, even still 10 is the best value to use across multiple datasets. Yet I can find little documentation or discussion about the gamma attribute, so I don't understand what it's actually doing. Do you have any tips or thoughts to help me better approach it?
 
 And heard back this:
-- Regarding the gamma value, how I approach/view it is as a data distribution manipulator of sorts. That is, imagine your data landscape as having lots and lots of peaks representing the modes, and gamma will make these easier to distinguish or join them all into one. For example, if we take a face dataset, then there will be lots of groups: faces with moustache, red hair, eyeglasses, smiles, etc. If we set a high value of gamma, then all these details disappear and the only distribution that "matters" is that of a face (2 eyes, nose, mouth, hair), so the Generator will effectively lose expressiveness. Setting a low value of gamma does the opposite, and the Generator will be highly expressive.
- The bad thing about setting a low gamma is that the model might not converge or collapse, as is usually the case. For this reason, what I do is I set a really high gamma first (80 or so), as I want the training to first be successful, but also for the Generator to create images in the vicinity of what I want. Then, I resume training from the last checkpoint where I used a large gamma, but now I lower gamma, then do the same iteratively until I get something I like.
-- Regarding when to lower the gamma​, it's really an art form. I simply have set a sort of rule to not train for too long, i.e., finetune/train a model with a high gamma for 5000kimg​, and then lower it a lot (go from 80 to 10 for example), and then train for 2000kimg​, then see if things need to be repeated (lowering and longer training).
-- If you wanna read more about gamma, here's a quick summary, but this is more math-heavy than perhaps needed: https://paperswithcode.com/method/r1-regularization
-
-About FreezeD
-- From what I remember, you should set a higher value for freezeD at the end of Transfer Learning​, and this is what they suggest in the docs: "In our experience, `--freezed=10` and `--freezed=13` tend to work reasonably well." - https://github.com/PDillis/stylegan3-fun/blob/main/docs/configs.md#transfer-learning
-- Sorry, was rereading what I said and I meant that, at the end of the "Transfer Learning" section in the configs.md​ file, they say that using `--freeze-d=10`​ or `--freeze-d=13`​ worked best for them from the beginning of training, not at the end of transfer learning itself!
-
-StyleGAN2-Extended
-- I'm also adding an extended version of StyleGAN2 (`--cfg=stylegan2-ext`​ when running train.py​), and I'm getting nice results, at the cost of each model being ~1 Gb instead of ~320 Mb. This is a work in progress, so test it if you want, but I haven't really converged to a final version of this. - https://gwern.net/face#extended-stylegan2-danbooru2019-aydao
+> - Regarding the gamma value, how I approach/view it is as a data distribution manipulator of sorts. That is, imagine your data landscape as having lots and lots of peaks representing the modes, and gamma will make these easier to distinguish or join them all into one. For example, if we take a face dataset, then there will be lots of groups: faces with moustache, red hair, eyeglasses, smiles, etc. If we set a high value of gamma, then all these details disappear and the only distribution that "matters" is that of a face (2 eyes, nose, mouth, hair), so the Generator will effectively lose expressiveness. Setting a low value of gamma does the opposite, and the Generator will be highly expressive.
+> - The bad thing about setting a low gamma is that the model might not converge or collapse, as is usually the case. For this reason, what I do is I set a really high gamma first (80 or so), as I want the training to first be successful, but also for the Generator to create images in the vicinity of what I want. Then, I resume training from the last checkpoint where I used a large gamma, but now I lower gamma, then do the same iteratively until I get something I like.
+> - Regarding when to lower the gamma​, it's really an art form. I simply have set a sort of rule to not train for too long, i.e., finetune/train a model with a high gamma for 5000kimg​, and then lower it a lot (go from 80 to 10 for example), and then train for 2000kimg​, then see if things need to be repeated (lowering and longer training).
+> - If you wanna read more about gamma, here's a quick summary, but this is more math-heavy than perhaps needed: https://paperswithcode.com/method/r1-regularization
+> 
+> About FreezeD
+> - From what I remember, you should set a higher value for freezeD at the end of Transfer Learning​, and this is what they suggest in the docs: "In our experience, `--freezed=10` and `--freezed=13` tend to work reasonably well." - https://github.com/PDillis/stylegan3-fun/blob/main/docs/configs.md#transfer-learning
+> - Sorry, was rereading what I said and I meant that, at the end of the "Transfer Learning" section in the configs.md​ file, they say that using `--freeze-d=10`​ or `--freeze-d=13`​ worked best for them from the beginning of training, not at the end of transfer learning itself!
+> 
+> StyleGAN2-Extended
+> - I'm also adding an extended version of StyleGAN2 (`--cfg=stylegan2-ext`​ when running train.py​), and I'm getting nice results, at the cost of each model being ~1 Gb instead of ~320 Mb. This is a work in progress, so test it if you want, but I haven't really converged to a final version of this. - https://gwern.net/face#extended-stylegan2-danbooru2019-aydao
 
 ## Interesting Reading
 - [The Path to StyleGan2: Implementing the StyleGAN](https://ym2132.github.io/StyleGAN)
