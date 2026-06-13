@@ -5,7 +5,7 @@ _BEWARE: These notes are from 2022 and I'm not sure how useful or applicable the
 --- Install package: Desktop Development with C++  
 --- Install package: Python Development  
 
-2. Execute BAT script:
+2. Execute BAT script:  
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat
 
 3. REBOOT
