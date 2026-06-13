@@ -66,10 +66,10 @@ python gen_video.py `
 - Need to auto randomize the order of the seeds? `--shuffle-seed=1`
 
 ## Generate and Visualize "Internal Representation" of Model (SG3 models only)
-### First you must list the available internal layers that can be visualized, then plug in the results into the next step.
+First you must list the available internal layers that can be visualized, then plug in the results into the next step.
 `python generate.py random-video --network=ffhq1024 --cfg=stylegan3-t --available-layers --seeds=0`
 
-### Render Test Image of "Internal Representation"
+Render Test Image of "Internal Representation
 - Ignore the errors, the image will render anyways...
 ```
 python generate.py images --network=ffhq1024 `
@@ -77,7 +77,7 @@ python generate.py images --network=ffhq1024 `
 --description= --outdir=videos
 ```
 
-### Render Video of "Internal Representation"
+Render Video of "Internal Representation
 - Since the visuals move slowly, use 30fps and a long duration-sec... Then speed up in post to 60fps
 - The `--duration-sec` must be >10.0 or it will result in frozen video
 - Use the `--description` to add notes, such as the starting-channel and seed number. I find this is useful for production purposes.
