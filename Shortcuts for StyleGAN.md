@@ -1,10 +1,6 @@
 # Shortcuts for StyleGAN
 Here is a collection of scripts for [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) that I wrote so that I could get rolling quickly on different projects. 
 
-## Prep PowerShell
-Open the "Anaconda Powershell Prompt" and then run:  
-`cd C:\Users\Zenith\Desktop\stylegan3-fun; conda activate stylegan3`
-
 ## Convert Dataset
 `python dataset_tool.py --source=Lightning_512x512 --dest=datasets/Lightning-512.zip --resolution=512x512`
 
