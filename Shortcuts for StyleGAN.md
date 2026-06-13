@@ -102,7 +102,6 @@ python generate.py circular-video --outdir=videos `
 - <--anchor-latent-space> will change the look, but not really useful.
 
 ## Blend Together Two Different StyleGAN2 Models
-`cd C:\Users\Zenith\Desktop\BlendModels; conda activate stylegan3`
 ```
 python blend_models.py `
 --model_res 512 `
