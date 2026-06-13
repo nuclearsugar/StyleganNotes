@@ -1,10 +1,6 @@
 # Hack Fix for Training on Multiple GPUs
 
-Here is more info regarding this bug: https://github.com/PDillis/stylegan3-fun/issues/33
-
-### Hacky Solution
-
-Source - https://github.com/NVlabs/stylegan3/issues/218
+More info regarding this bug: https://github.com/PDillis/stylegan3-fun/issues/33
 
 > When attempting to run the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) repo, you may run into the training stalling when attempting to train. It will just look like it's loading indefinitely. I believe this is due to the initial GPU:0 locking out access to bias_act.pyd and similiar StyleGAN3 custom cuda kernels plugins.
 > 
@@ -32,3 +28,5 @@ Source - https://github.com/NVlabs/stylegan3/issues/218
 > Now when you run the model with multiple GPUs, once the model encounters the situation where a plugin load has failed, it will try the secondary plugin that you have just created and will succeed.
 > 
 > Feel free to automate this process if you are running with GPUs >2 but this workaround should work. Note that the initial setup may take about 1-5min longer than before.
+
+Source - https://github.com/NVlabs/stylegan3/issues/218
