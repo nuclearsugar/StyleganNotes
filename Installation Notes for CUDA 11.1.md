@@ -56,13 +56,13 @@ Variable Value: TRUE
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
 DOCUMENTATION OF THINGS LEARNED... MANY HOURS SPENT GETTING THIS TO FUNCTION  
---- Must use Visual Studio 2019, since Visual Studio 2022 does not link correctly to the CUDA Toolkit 11.1  
---- Must use Python 3.9  
---- Must use CUDA Toolkit 11.1  
---- VERY HELPFUL = https://github.com/NVlabs/stylegan3/issues/103  
---- VERY HELPFUL = https://github.com/PDillis/stylegan3-fun/blob/main/docs/troubleshooting.md#why-is-cuda-toolkit-installation-necessary  
---- VERY HELPFUL = https://github.com/PDillis/stylegan3-fun/issues/7  
---- https://github.com/NVlabs/stylegan2-ada-pytorch/issues/155  
---- https://github.com/NVlabs/stylegan3/issues/88  
---- https://www.youtube.com/watch?v=BCde68k6KXg  
---- https://towardsdatascience.com/generating-your-own-images-with-nvidia-stylegan2-ada-for-pytorch-on-ampere-a80fab52d6b5  
+- Must use Visual Studio 2019, since Visual Studio 2022 does not link correctly to the CUDA Toolkit 11.1  
+- Must use Python 3.9  
+- Must use CUDA Toolkit 11.1  
+- VERY HELPFUL = https://github.com/NVlabs/stylegan3/issues/103  
+- VERY HELPFUL = https://github.com/PDillis/stylegan3-fun/blob/main/docs/troubleshooting.md#why-is-cuda-toolkit-installation-necessary  
+- VERY HELPFUL = https://github.com/PDillis/stylegan3-fun/issues/7  
+- https://github.com/NVlabs/stylegan2-ada-pytorch/issues/155  
+- https://github.com/NVlabs/stylegan3/issues/88  
+- https://www.youtube.com/watch?v=BCde68k6KXg  
+- https://towardsdatascience.com/generating-your-own-images-with-nvidia-stylegan2-ada-for-pytorch-on-ampere-a80fab52d6b5
