@@ -12,7 +12,6 @@ python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 --gpus=2 --batch=32 --batch-gpu=8 --snap-res=8k --img-snap=3 --snap=3 `
 --resume=externalmodels/stylegan2-ffhq-512x512.pkl
 ```
-- `CTRL+C` will cancel the task that is currently executing in the command prompt window.
 
 ## Train StyleGAN3
 ```
