@@ -40,9 +40,9 @@ python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 --gpus=2 --batch=32 --batch-gpu=8 --img-snap=3 --snap=6 `
 --resume=externalmodels/stylegan2-ffhq-256x256.pkl
 ```
-- When training a 256x256 model, you must include this attribute: <--cbase=16384>
+- When training a 256x256 model, you must include this attribute: `--cbase=16384`
 - Doing test runs on a new dataset using a 256x256 model is an excellent way to run tests of what is the best value for Gamma and save valuable render time. After you've determined the best Gamma value for the 256x256 model, then just multiply the Gamma value by 4 and then use it for the 512x512 model. For instance: Gamma=0.8192 for 256x256 would become Gamma=3.2768 for 512x512.
-- "As a rule of thumb, the value of --gamma scales quadratically with respect to the training set resolution: doubling the resolution (e.g., 256x256 → 512x512) means that --gamma should be multiplied by 4 (e.g., 2 → 8)."
+- "As a rule of thumb, the value of `--gamma` scales quadratically with respect to the training set resolution: doubling the resolution (e.g., 256x256 → 512x512) means that --gamma should be multiplied by 4 (e.g., 2 → 8)."
 
 ## Generate Seed Images
 ```
