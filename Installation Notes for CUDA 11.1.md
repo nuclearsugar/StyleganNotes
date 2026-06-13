@@ -44,7 +44,7 @@ C:\Users\Zenith\AppData\Local\torch_extensions
 
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
-When trying to render out video using the <gen_video.py> script, I saw this error:
+When trying to render out video using the <gen_video.py> script, I saw this error:  
 `"OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized."`
 
 To solve this and allow the code to continue running, add the following to the Windows environment variables:
