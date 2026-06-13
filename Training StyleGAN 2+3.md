@@ -17,7 +17,7 @@ Training and fine-tuning StyleGAN models is nearly undocumented. It is very slow
 - StyleGAN3 isn't very forgiving with small datasets and produces less desirable interpolation compared to StyleGAN2. It also takes double the time to train compared to StyleGAN2. Unless you have a dataset that is highly self similar, stick with StyleGAN2.
 -  The organization of the image dataset will seemingly affect the training of the GAN. Or at least for my small fine-tuning training runs. I prepared a dataset containing ~73,000 images of graffiti and the images are currently organized by certain themes. For example there are 562 in a red spiky theme, 894 in a blue flowy theme, 345 in a green blocky theme, and remain in this grouped fashion when alphanumerically ordered. So I performed 2 training tests: 1 organized dataset and 1 randomized dataset. They each ended up with very different results after training. The organized dataset converged within 100kimg, while the randomized dataset was a mess.
 - If it's getting stuck at the step: `Setting up PyTorch plugin "bias_act_plugin"...` then delete: <C:\Users\<username>\AppData\Local\torch_extensions\torch_extensions\Cache> and then re-run StyleGAN3 python code.
-- Useful training notes here
+- Useful training notes here:
   - https://github.com/l4rz/practical-aspects-of-stylegan2-training
   - https://gwern.net/face
   - https://towardsdatascience.com/stylegan-v2-notes-on-training-and-latent-space-exploration-e51cf96584b3
