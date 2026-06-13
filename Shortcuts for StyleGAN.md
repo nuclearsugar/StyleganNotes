@@ -79,8 +79,8 @@ python generate.py images --network=ffhq1024 `
 
 ### Render Video of "Internal Representation"
 - Since the visuals move slowly, use 30fps and a long duration-sec... Then speed up in post to 60fps
-- The duration-sec must be >10.0 or it will result in frozen video
-- Use the "description" to add notes, such as the starting-channel and seed number
+- The `--duration-sec` must be >10.0 or it will result in frozen video
+- Use the `--description` to add notes, such as the starting-channel and seed number. I find this is useful for production purposes.
 ```
 python generate.py random-video --network=ffhq1024 --cfg=stylegan3-t `
 --layer=L7_276_323 --seeds=0 --starting-channel=0  --description= `
