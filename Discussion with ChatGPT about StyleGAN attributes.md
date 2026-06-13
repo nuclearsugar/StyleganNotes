@@ -168,6 +168,7 @@ Risk: A Gamma of 20 could over-regularize the model, potentially leading to over
 What Could Happen:  
 With Gamma = 15:  
 The model might balance reducing overfitting while still preserving enough detail in the graffiti, keeping the artwork sharp but less repetitive.  
+
 With Gamma = 20:  
 The model may significantly reduce overfitting but might risk losing too much detail, causing the graffiti to appear overly smoothed or simplified.
 
@@ -220,10 +221,10 @@ If the seed values are derived from a limited range or if there’s some underly
 If any post-processing steps are applied to the generated images, they could inadvertently introduce patterns. For example, applying a uniform filter or adjustment across the entire set might enhance similarities.
 
 Recommendations to Test:  
-Vary Seed Distribution: Instead of sequentially using seeds, try using a random selection of seed numbers to see if it reduces the appearance of patterns.  
-Check Model Latent Space: You could explore the latent space directly to understand if there are clusters or patterns emerging naturally in the outputs.  
-Inspect Training Dataset Diversity: Ensure that the dataset is sufficiently diverse to encourage the model to generate a wide variety of outputs across different seeds.  
-By exploring these factors, you may gain insight into the patterns you’re observing and how to potentially mitigate them in future renderings.
+- Vary Seed Distribution: Instead of sequentially using seeds, try using a random selection of seed numbers to see if it reduces the appearance of patterns.  
+- Check Model Latent Space: You could explore the latent space directly to understand if there are clusters or patterns emerging naturally in the outputs.  
+- Inspect Training Dataset Diversity: Ensure that the dataset is sufficiently diverse to encourage the model to generate a wide variety of outputs across different seeds.  
+- By exploring these factors, you may gain insight into the patterns you’re observing and how to potentially mitigate them in future renderings.
 
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
@@ -248,7 +249,8 @@ High-frequency noise can make images look overly sharp or distorted and is often
 In the latent space, if there’s too much noise, it can lead to the generator producing outputs that don’t make sense or are hard to interpret visually. This can happen if the model hasn’t learned to represent the underlying data distribution effectively.
 
 Implications of Noise in Relation to Gamma:  
-High Gamma: When Gamma is set too high, it can smooth out details and reduce noise but may lead to over-smoothing, where important features are lost.  
+High Gamma: When Gamma is set too high, it can smooth out details and reduce noise but may lead to over-smoothing, where important features are lost.
+
 Low Gamma: A lower Gamma allows the model to capture more detail but can also increase the risk of introducing noise in the form of artifacts or overfitting, leading to less coherent outputs.
 
 Summary: Noise in generated images can be seen as undesirable visual artifacts or overly detailed, irrelevant features that detract from the intended quality of the images. Understanding this helps in adjusting Gamma effectively to strike a balance between detail and coherence in your generated outputs.
