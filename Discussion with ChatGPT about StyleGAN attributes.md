@@ -1,8 +1,8 @@
 # Discussion with ChatGPT about StyleGAN attributes
 
-2024-09-20
+BEWARE: I cannot be sure if all of the information within the following discussion is accurate, but some of it rings true with my scattered experience on this topic. It was illuminating enough that I saved the discussion since it answered some long term questions, or at least confirmed my suspicions, which I was unable to find anywhere on the internet. StyleGAN is not well documented, used by only a few people, and only amaedmic papers give tidbits of knowledge in often cryptic ways.
 
-I'm not sure if all of the info this discussion is legit, but some of it rings true with my scattered knowledge on this topic. It was illuminating enough that I saved the discussion since it answered some long term questions that I was unable to find answers to anywhere on the internet. StyleGAN is not well documented, used by only a few people, and only heavy research papers give tidbits of knowledge in often cryptic ways.
+Conversation with ChatGPT on 2024-09-20
 
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
