@@ -274,7 +274,7 @@ If your GPU’s VRAM allows, it’s best to stick with batch sizes that are mult
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
 ### User said:
-And as for the "Batch" attribute, I've been setting it to <batch=32>. What is the best approach?
+As for the "Batch" attribute, I've been setting it to <batch=32>. What is the best approach?
 
 ### ChatGPT said:  
 Setting the Batch attribute to 32 can be a good starting point, but the ideal batch size can depend on several factors, including your specific GPU capabilities and the nature of your dataset. Here are some considerations to help you determine the best approach:
