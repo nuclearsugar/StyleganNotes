@@ -44,6 +44,7 @@ C:\Users\Zenith\AppData\Local\torch_extensions
 
 15. Try doing a training session. If you see the error below, then manually create folders for this full path: `<C:\Users\Zenith\AppData\Local\Temp\torch\kernels>`
 
+ERROR:  
 C:\Users\Zenith\Desktop\stylegan3-fun-main\training\augment.py:231: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is  C:\Users\Zenith\AppData\Local\Temp/torch/kernels. This warning will appear only once per process. (Triggered internally at  C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\cuda\jit_utils.cpp:860.)  
   s = torch.exp2(torch.randn([batch_size], device=device) * self.scale_std)
 
