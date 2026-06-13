@@ -166,11 +166,8 @@ Benefit: You may see a quicker reduction in overfitting, with clearer, more gene
 Risk: A Gamma of 20 could over-regularize the model, potentially leading to over-smoothing—your graffiti might lose intricate details or become too simple, especially given the uniform black background.
 
 What Could Happen:  
-With Gamma = 15:  
-The model might balance reducing overfitting while still preserving enough detail in the graffiti, keeping the artwork sharp but less repetitive.  
-
-With Gamma = 20:  
-The model may significantly reduce overfitting but might risk losing too much detail, causing the graffiti to appear overly smoothed or simplified.
+With Gamma = 15: The model might balance reducing overfitting while still preserving enough detail in the graffiti, keeping the artwork sharp but less repetitive.  
+With Gamma = 20: The model may significantly reduce overfitting but might risk losing too much detail, causing the graffiti to appear overly smoothed or simplified.
 
 Recommendation:
 I would suggest raising Gamma to 15 first. This will provide a more gradual increase in regularization and allow you to assess how much it impacts the overfitting without overcorrecting. If Gamma = 15 reduces overfitting but not enough, then try 20 as the next step. This way, you avoid potentially over-smoothing too early and can fine-tune more effectively.
