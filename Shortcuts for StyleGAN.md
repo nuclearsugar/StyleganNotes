@@ -99,7 +99,7 @@ python generate.py circular-video --outdir=videos `
 --network=externalmodels/stylegan2-ffhq-512x512.pkl; `
 ```
 - Since the visuals move slowly, use 15fps and a long duration-sec (such as 480)... Then speed up in post to 60fps to make 2 minutes of footage.
-- <--anchor-latent-space> will change the look, but not really useful.
+- `--anchor-latent-space` will change the look, but not really useful.
 
 ## Blend Together Two Different StyleGAN2 Models
 ```
