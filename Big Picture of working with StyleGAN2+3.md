@@ -11,7 +11,7 @@ I've found the Youtube workshops and Google Colab Notebooks from [Derrick Schult
 
 ### Tips
 - I use the FFHQ-512x512 pre-trained model from Nvidia and fine-tune it on my datasets. Then pick out the best PKL models and render out the latent walk videos.
-- After much experimenting, I'd found that the StyleGAN3 codebase is more mature and luckily still supports the StyleGAN2 approach. Personally I prefer the StyleGAN2 approach to how it morphs visually, it trains about x2 faster, and the generated video seems to be smoother.
+- After much experimenting, I'd found that the StyleGAN3 codebase is more mature, even better is the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) codebase, and luckily it still supports the StyleGAN2 approach. Personally I prefer the StyleGAN2 approach to how it morphs visually, it trains about x2 faster, and the generated video seems to be smoother.
 - One thing that kept tripping me up is that the image dataset resolution (512x512 is ideal currently) must match the PKL pre-trained model (FFHQ-512x512.pkl) from Nvidia. Otherwise it will throw a cryptic error when trying to train.
 - Another thing is that the image dataset requirements are kinda strict. They must all be exactly cropped or resized to 512x512 pixels. They must all be RGB 8-bit images without an alpha channel. If the image is CMYK or index color then it'll throw a cryptic error. So if you're gathering a bunch of images from Google or Flickr, then Photoshop Actions are very helpful to streamline this process. Or ImageMagick via command line.
 - You can of course run all of this locally on your computer if you have a good GPU. It's a pain in the ass to get StyleGAN3-fun repo working but can share some tips if you go down this route.
