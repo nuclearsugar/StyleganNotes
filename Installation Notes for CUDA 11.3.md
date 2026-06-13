@@ -49,7 +49,7 @@ C:\Users\Zenith\Desktop\stylegan3-fun-main\training\augment.py:231: UserWarning:
 
 17. All done! Ready to play with StyleGAN2 or 3
 
-==========================================
+<hr style="border: none; border-top: 1px solid #d0d7de;">
 
 When trying to render out video using the <gen_video.py> script, I saw this error:  
 `"OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized."`
@@ -60,7 +60,7 @@ Variable Name: KMP_DUPLICATE_LIB_OK
 Variable Value: TRUE
 ```
 
-==========================================
+<hr style="border: none; border-top: 1px solid #d0d7de;">
 
 DOCUMENTATION OF THINGS LEARNED... MANY HOURS SPENT GETTING THIS TO FUNCTION  
 --- Must use Visual Studio 2019, since Visual Studio 2022 does not link correctly to the CUDA Toolkit 11.1  
