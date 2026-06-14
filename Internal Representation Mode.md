@@ -7,7 +7,7 @@ But setting up the interpolation render code was a bit annoying... So I saved it
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
 Render Video - Internal Representation:  
-ALL 1 SEED ON DIFFERANT LAYERS AND CHANNELS
+ALL 1 SEED, BUT ON DIFFERENT LAYERS AND CHANNELS
 
 ```
 !python generate.py random-video --network=ffhq1024 --cfg=stylegan3-t \
