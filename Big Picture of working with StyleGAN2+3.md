@@ -5,7 +5,7 @@ I've found the Youtube workshops and Google Colab Notebooks from [Derrick Schult
 ### Here's the big picture of the workflow for StyleGAN2/3:
 1. Create a 512x512 image dataset.
    - 1,000 images is the absolute minimum, but will likely exhibit some amount of mode collapse.
-   - 10,000 to 50,000 images is preferable. This will result in a more flexible model that contains a variety of seeds. I use Stable Diffusion to generate an image dataset.
+   - 10,000 to 50,000 images is preferable. This will result in a more flexible model that contains a variety of seeds. I use Stable Diffusion or Flux to generate an image dataset.
 3. As a starting point, use the FFHQ-512x512 pre-trained model supplied by Nvidia.
    - [stylegan2-ffhq-512x512.pkl](https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-ffhq-512x512.pkl)
    - [stylegan3-t-afhqv2-512x512.pkl](https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-t-afhqv2-512x512.pkl)
