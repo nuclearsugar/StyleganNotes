@@ -1,5 +1,5 @@
 # StyleGAN2+3 Notes
-Here's my collection of articles that share my experience working with the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) repo. These were originally just notes to myself so that I could remember what I learned from my various experiments and projects. It's a bit scattered but contains some useful tidbits.
+This collection of articles shares what I learned while working with the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) repo. Originally written as notes for myself, it contains lessons learned from various experiments and projects. It's a bit scattered but contains some useful tidbits.
 
 - [Big Picture of Working with StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Big%20Picture%20of%20working%20with%20StyleGAN2%2B3.md)
 - [My Experience with Training StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Training%20StyleGAN%202%2B3.md)
@@ -11,7 +11,7 @@ Here's my collection of articles that share my experience working with the [Styl
 - [Hack Fix for Training on Multiple GPUs](https://github.com/nuclearsugar/StyleganNotes/blob/main/Hack%20Fix%20for%20Training%20on%20Multiple%20GPUs.md)
 
 ## Tech Notes from Projects
-I always write up tech notes to accompany the release of my VJ packs. These tech notes contain extra bits of experience regarding StyleGAN2+3, particularly in using Stable Diffusion or Flux to generate image datasets for training StyleGAN2+3.
+I always include technical notes with my VJ pack releases. These notes contain extra bits of experience, particularly with using Stable Diffusion or Flux to generate image datasets for training StyleGAN2+3.
 
 - [PACK ⬕ Wildstyle Graf](https://www.jasonfletcher.info/vjloops/wildstyle-graf.html)
 - [PACK ⬕ Fashion Pose](https://www.jasonfletcher.info/vjloops/fashion-pose.html)
