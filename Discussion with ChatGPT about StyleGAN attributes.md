@@ -7,7 +7,7 @@ Conversation with ChatGPT on September 20, 2024
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
 ### User said:
-I'm using styleGAN2 and having trouble understanding how to select the ideal value for the Gamma attribute (r1 regularization). Can you give me a metaphor example to help me understand?
+I'm using StyleGAN2 and having trouble understanding how to select the ideal value for the Gamma attribute (r1 regularization). Can you give me a metaphor example to help me understand?
 
 ### ChatGPT said:  
 Think of the Gamma attribute in StyleGAN2 like a thermostat for controlling a room's temperature.
