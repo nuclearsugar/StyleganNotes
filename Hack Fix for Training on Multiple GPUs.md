@@ -28,5 +28,5 @@ More info regarding this bug: https://github.com/PDillis/stylegan3-fun/issues/33
 > Now when you run the model with multiple GPUs, once the model encounters the situation where a plugin load has failed, it will try the secondary plugin that you have just created and will succeed.
 > 
 > Feel free to automate this process if you are running with GPUs >2 but this workaround should work. Note that the initial setup may take about 1-5min longer than before.
-
-Source - https://github.com/NVlabs/stylegan3/issues/218
+> 
+> - Source: https://github.com/NVlabs/stylegan3/issues/218
