@@ -4,7 +4,7 @@ Here is a collection of scripts for [StyleGAN3-fun](https://github.com/PDillis/s
 ## Convert Dataset
 `python dataset_tool.py --source=Lightning_512x512 --dest=datasets/Lightning-512.zip --resolution=512x512`
 
-## Train StyleGAN2
+## Train StyleGAN2 (transfer learning aka fine-tune training)
 ```
 python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 --data=datasets/Lightning-512.zip `
@@ -13,7 +13,7 @@ python train.py --outdir=results --cfg=stylegan2 --metrics=None `
 --resume=externalmodels/stylegan2-ffhq-512x512.pkl
 ```
 
-## Train StyleGAN3
+## Train StyleGAN3 (transfer learning aka fine-tune training)
 ```
 python train.py --outdir=results --cfg=stylegan3-t --metrics=None `
 --data=datasets/Lips-512.zip `
@@ -22,7 +22,7 @@ python train.py --outdir=results --cfg=stylegan3-t --metrics=None `
 --resume=externalmodels/stylegan3-t-afhqv2-512x512.pkl
 ```
 
-## Train StyleGAN2-EXT
+## Train StyleGAN2-EXT (transfer learning aka fine-tune training)
 ```
 python train.py --outdir=results --cfg=stylegan2-ext --metrics=None `
 --data=datasets/Escher-512.zip `
@@ -59,10 +59,10 @@ python gen_video.py `
 --seeds=100-110 `
 --network=externalmodels/stylegan2-ffhq-512x512.pkl; `
 ```
-- 60 w-frames = 1 second /// aka the time tweening between keyframes /// 120 seeds = 2 minutes
-- 180 w-frames is useful for smooth motion /// 40 seeds = 2 minutes
-- 360 w-frames is useful for medium motion /// 30 seeds = 3 minutes
-- 720 w-frames is useful for slow motion /// 30 seeds = 6 minutes
+- 60 w-frames = 1 second /// aka the time tweening between keyframes /// 120 seeds = 2 minutes of rendered content
+- 180 w-frames is useful for smooth motion /// 40 seeds = 2 minutes of rendered content
+- 360 w-frames is useful for medium motion /// 30 seeds = 3 minutes of rendered content
+- 720 w-frames is useful for slow motion /// 30 seeds = 6 minutes of rendered content
 - Need to auto randomize the order of the seeds? `--shuffle-seed=1`
 
 ## Generate "Internal Representation" Image or Video (SG3 models only)
@@ -112,8 +112,10 @@ python blend_models.py `
 --higher_res_pkl modelsss/faces.pkl `
 --output_path blendedmodels/Graffiti-Faces_SplitAt64_512x512.pkl
 ```
+- This script produces very strange results since it splices together two different models together. The two models must be the same resolution (512x512), same architecture (StyleGAN2), and I think contain the same amount of internal layers. So it's easiest to use models which were fine-tuned from the same base model, such as `stylegan2-ffhq-512x512.pkl`.
+- Since it's highly unpredictable, I recommend splicing at different resolution split points, saving out multiple models, and then rendering out some images from each model to see the results.
 - https://medium.com/@adamcole.studio/network-blending-user-interface-135bad23dd9c
-- Use this repo: https://github.com/Sxela/stylegan3_blending
+- Must use this repo: https://github.com/Sxela/stylegan3_blending
 
 ## Train or Generate on a Specific GPU
 Useful if you have a computer with multiple GPUs.
