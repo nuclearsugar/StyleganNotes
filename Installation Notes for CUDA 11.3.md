@@ -6,7 +6,7 @@ _BEWARE: These notes are from 2022 and I'm not sure how useful or applicable the
 --- Install package: Python Development
 
 2. Execute BAT script:  
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat
+`C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat`
 
 3. REBOOT
 
@@ -23,7 +23,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build
 8. Open "Anaconda Powershell Prompt"
 
 9. Extract ZIP to desktop:  
-stylegan3-fun.zip
+`stylegan3-fun.zip`
 
 10. Navigate to folder within the Powershell prompt:  
 `cd C:\Users\Zenith\Desktop\stylegan3-fun`
@@ -40,7 +40,7 @@ TO:
 `conda activate stylegan3`
 
 14. If this folder exists, then delete it:  
-C:\Users\Zenith\AppData\Local\torch_extensions
+`C:\Users\Zenith\AppData\Local\torch_extensions`
 
 15. Try doing a training session. If you see the error below, then manually create folders for this full path: `<C:\Users\Zenith\AppData\Local\Temp\torch\kernels>`
 
