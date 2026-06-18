@@ -1,5 +1,5 @@
 # StyleGAN2+3 Notes
-This collection of articles shares what I learned while working with the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) repo. Originally written as notes for myself, it contains lessons learned from various experiments and projects. It's a bit scattered but contains some useful tidbits.
+This collection of articles shares what I've learned while working with the [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) repo. Originally written as notes for myself, it contains lessons learned from various experiments and projects. It's a bit scattered but contains some useful tidbits.
 
 - [Big Picture of Working with StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Big%20Picture%20of%20working%20with%20StyleGAN2%2B3.md)
 - [My Experience with Training StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Training%20StyleGAN%202%2B3.md)
