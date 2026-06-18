@@ -114,7 +114,7 @@ python blend_models.py `
 --output_path blendedmodels/Graffiti-Faces_SplitAt64_512x512.pkl
 ```
 - This script produces very strange results since it splices together two different models together. The two models must be the same resolution (512x512), same architecture (StyleGAN2), and I think contain the same amount of internal layers. So it's easiest to use models which were fine-tuned from the same base model, such as `stylegan2-ffhq-512x512.pkl`.
-- Since it's highly unpredictable, I recommend splicing at different resolution split points, saving out multiple models, and then rendering out some images from each model to see the results.
+- Since it's highly unpredictable, I recommend splicing at different `split_res` points, saving out multiple models, and then rendering out images/videos from each model to see the results.
 - https://medium.com/@adamcole.studio/network-blending-user-interface-135bad23dd9c
 - Must use this repo: https://github.com/Sxela/stylegan3_blending
 
