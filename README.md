@@ -3,8 +3,8 @@ This collection of articles shares what I learned while working with the [StyleG
 
 - [Big Picture of Working with StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Big%20Picture%20of%20working%20with%20StyleGAN2%2B3.md)
 - [My Experience with Training StyleGAN2+3](https://github.com/nuclearsugar/StyleganNotes/blob/main/Training%20StyleGAN%202%2B3.md)
-- [Shortcuts for StyleGAN](https://github.com/nuclearsugar/StyleganNotes/blob/main/Shortcuts%20for%20StyleGAN.md)
 - [Discussion with ChatGPT about StyleGAN attributes](https://github.com/nuclearsugar/StyleganNotes/blob/main/Discussion%20with%20ChatGPT%20about%20StyleGAN%20attributes.md)
+- [Shortcuts for StyleGAN](https://github.com/nuclearsugar/StyleganNotes/blob/main/Shortcuts%20for%20StyleGAN.md)
 - [Internal Representation Mode](https://github.com/nuclearsugar/StyleganNotes/blob/main/Internal%20Representation%20Mode.md)
 - [Installation Instructions (CUDA 11.1)](https://github.com/nuclearsugar/StyleganNotes/blob/main/Installation%20Notes%20for%20CUDA%2011.1.md)
 - [Installation Instructions (CUDA 11.3)](https://github.com/nuclearsugar/StyleganNotes/blob/main/Installation%20Notes%20for%20CUDA%2011.3.md)
