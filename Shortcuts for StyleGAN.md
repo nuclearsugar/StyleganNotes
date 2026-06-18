@@ -71,7 +71,7 @@ python gen_video.py `
 python generate.py random-video --network=ffhq1024 --cfg=stylegan3-t --available-layers --seeds=0`
 ```
 
-**2) Render Test Image of "Internal Representation**  
+**2) Render Test Image of "Internal Representation"**  
 - Ignore the errors, the image will render anyways...
 ```
 python generate.py images --network=ffhq1024 `
