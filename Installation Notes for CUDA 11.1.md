@@ -6,7 +6,7 @@ _BEWARE: These notes are from 2022 and I'm not sure how useful or applicable the
 --- Install package: Python Development  
 
 2. Execute BAT script:  
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat
+`C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat`
 
 3. REBOOT
 
@@ -23,7 +23,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build
 8. Open "Anaconda Powershell Prompt"
 
 9. Extract ZIP to desktop:  
-stylegan3-fun.zip
+`stylegan3-fun.zip`
 
 10. Navigate to folder within the Powershell prompt:  
 `cd C:\Users\Zenith\Desktop\stylegan3-fun`
@@ -38,7 +38,7 @@ stylegan3-fun.zip
 `pip install torch===1.9.1+cu111 torchvision===0.10.1+cu111 torchaudio===0.9.1 -f https://download.pytorch.org/whl/torch_stable.html`
 
 14. If this folder exists, then delete it:  
-C:\Users\Zenith\AppData\Local\torch_extensions
+`C:\Users\Zenith\AppData\Local\torch_extensions`
 
 15. All done! Ready to play with StyleGAN2 or 3
 
