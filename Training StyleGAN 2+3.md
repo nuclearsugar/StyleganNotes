@@ -33,7 +33,7 @@ Training and fine-tuning StyleGAN models is nearly undocumented. It is very slow
 - Useful Gamma examples from Nvidia can found here - https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md - and here - https://github.com/NVlabs/stylegan2-ada-pytorch/blob/main/train.py#L154
 - When trying to find the ideal Gamma value, "Try increasing the value by 2x and 4x, and also decreasing it by 2x and 4x."
 https://github.com/NVlabs/stylegan3/blob/main/docs/configs.md#old-stylegan2-ada-configurations
-- For unknown reasons Nvidia suggests using multiples of 8 for the Gamma value, hence the strange values: 13.1072, 6.5536, 3.2768, 1.6384, 0.8192 - I am not sure if it really matters to use these precise values or whole numbers.
+- For unknown reasons Nvidia suggests using multiples of 8 for the Gamma value, hence the strange values: 13.1072, 6.5536, 3.2768, 1.6384, 0.8192 - I am not sure if it really matters to use these precise values or whole numbers. But clearly it works just fine with a value of 10.
 - If no value is manually input for Gamma, then it will be automatically determined by the following formula: 
 `Gamma = 0.0002 * (Resolution^2) / Batch`. For the 512x512 model resolution that I typically work at, this translates to Gamma=1.6384, which is interesting since it's much lower than I've ever found remotely useful.
 
