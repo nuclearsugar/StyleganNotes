@@ -1,4 +1,4 @@
-# Shortcuts for StyleGAN2+3
+# Script Shortcuts for StyleGAN2+3
 Here is a collection of scripts for [StyleGAN3-fun](https://github.com/PDillis/stylegan3-fun) that I wrote so that I could get rolling quickly on different projects. 
 
 ## Convert Dataset
