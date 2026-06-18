@@ -9,7 +9,7 @@ I've found the Youtube workshops and Google Colab Notebooks from [Derrick Schult
 3. As a starting point, use the FFHQ-512x512 pre-trained model supplied by Nvidia.
    - [stylegan2-ffhq-512x512.pkl](https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-ffhq-512x512.pkl)
    - [stylegan3-t-afhqv2-512x512.pkl](https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-t-afhqv2-512x512.pkl)
-5. Transfer learn the model using your dataset for between 8 to 48 hours (or much longer if you're able). Doesn't have to be continous since training can be resumed using the last saved PKL checkpoint. Here are some [code shortcuts](https://github.com/nuclearsugar/StyleganNotes/blob/main/Shortcuts%20for%20StyleGAN.md) and [more info](https://github.com/nuclearsugar/StyleganNotes/blob/main/Training%20StyleGAN%202%2B3.md) regarding training.
+5. Transfer learn the model using your dataset for between 8 to 48 hours (or much longer if you're able). Doesn't have to be continous since training can be resumed using the last saved PKL checkpoint. Here are some [code shortcuts](https://github.com/nuclearsugar/StyleganNotes/blob/main/Shortcuts%20for%20StyleGAN.md) and [training tips](https://github.com/nuclearsugar/StyleganNotes/blob/main/Training%20StyleGAN%202%2B3.md).
 6. Render out between 1,000 to 10,000 seed images using your newly trained model. Curate the best images and assemble them into the desired order. Use that to make a sequential list of the seed numbers in text form.
 7. Plug in the seed numbers and render out a latent walk video using the same newly trained model.
 8. Take the videos into the 'Topaz Video' app and uprez from 512x512 to 2048x2048.
