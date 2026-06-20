@@ -31,7 +31,9 @@ I always include technical notes with my VJ pack releases. The links listed belo
 - [PACK ⬕ Machine Stakeout](https://www.jasonfletcher.info/vjloops/machine-stakeout.html)
 - [PACK ⬕ Emoji Wreck](https://www.jasonfletcher.info/vjloops/emoji-wreck.html)
 - [PACK ⬕ Machine Landscapes](https://www.jasonfletcher.info/vjloops/machine-landscapes.html)
-- [PACK ⬕ Machine Graffiti](https://www.jasonfletcher.info/vjloops/machine-graffiti.html)
-- [PACK ⬕ Machine Hallucinations](https://www.jasonfletcher.info/vjloops/machine-hallucinations.html)
-- [PACK ⬕ Machine Faces](https://www.jasonfletcher.info/vjloops/machine-faces.html)
-- [PACK ⬕ Machine Eyes](https://www.jasonfletcher.info/vjloops/machine-eyes.html)
+
+## Download PKL Models
+The projects I'm most proud of are the StyleGAN2 models that I trained for the [Graffiti Reset](https://www.jasonfletcher.info/vjloops/graffiti-reset.html) and [Wildstyle Graf](https://www.jasonfletcher.info/vjloops/wildstyle-graf.html) VJ packs. To encourage experimentation and creative exploration, I've made the PKL model files available for download:
+
+- [GraffitiReset_StyleGAN2_512x512_71600ImagesDataset_Gamma10_MirrorX_FineTunedUntil2340kimg.pkl](https://huggingface.co/superwatermelon/GraffitiReset_StyleGAN2_512/tree/main)
+- [WildstyleGraf_StyleGAN2_512x512_7256ImagesDataset_Gamma10_MirrorX-Y_FineTunedUntil9024kimg.pkl](https://huggingface.co/superwatermelon/WildstyleGraf_StyleGAN2_512/tree/main)
