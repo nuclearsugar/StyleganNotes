@@ -37,3 +37,7 @@ The projects I'm most proud of are the StyleGAN2 models that I trained for the [
 
 - [GraffitiReset_StyleGAN2_512x512_71600ImagesDataset_Gamma10_MirrorX_FineTunedUntil2340kimg.pkl](https://huggingface.co/superwatermelon/GraffitiReset_StyleGAN2_512/tree/main)
 - [WildstyleGraf_StyleGAN2_512x512_7256ImagesDataset_Gamma10_MirrorX-Y_FineTunedUntil9024kimg.pkl](https://huggingface.co/superwatermelon/WildstyleGraf_StyleGAN2_512/tree/main)
+
+## Watch Rendered Videos
+[![Wildstyle Graf - VJ Pack Compilationo](https://img.youtube.com/vi/v55IKvG1DRE/0.jpg)](https://www.youtube.com/watch?v=v55IKvG1DRE)
+[![Graffiti Reset - VJ Pack Compilation](https://img.youtube.com/vi/zPxcQYR847Y/0.jpg)](https://www.youtube.com/watch?v=zPxcQYR847Y)
